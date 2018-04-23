@@ -1,0 +1,123 @@
+h1 {
+  color: #0066cc;
+}
+
+.header h4 {
+  font-style: italic;
+}
+
+/* Style the header */
+.header {
+    padding: 10px;
+    text-align: center;
+    text-shadow: black;
+    font-size: 35px;
+    background-color: #e6f2ff;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+/* position the question box */
+.lobby {
+  position: absolute;
+  top: 95%;
+  left: 15%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 50%;
+  height: 100px;
+}
+
+/* length of text box */
+.lobby input {
+  width: 500px;
+}
+
+.lobby h4 {
+  float right;
+}
+
+.prompt {
+
+}
+.prompt{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 17px;
+}
+
+.footer {
+  position: fixed;
+
+   left: 90%;
+   bottom: 0;
+   width: 100%;
+   color: black;
+
+
+}
+
+questionboard {
+    width: 70px;
+    height: 300px;
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+}
+
+
+
+.recentq ul, ol{
+  list-style-type: none;
+}
+
+/* Style the buttons (questions) */
+.recentq button {
+  background-color: #003366;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+/* Pattern styles */
+.container1 {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  height: 100%
+}
+
+li {
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+}
+.recentq {
+  position: absolute;
+  color:  #00264d;
+  left: 0px;
+  width: 50%;
+}
+
+.votesq {
+  position: absolute;
+  right: 0px;
+  width: 50%;
+color: slateGray;
+}

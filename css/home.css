@@ -1,0 +1,42 @@
+
+h1 {
+  color: #0066cc;
+}
+
+.header h4 {
+  font-style: italic;
+}
+
+/* Style the header */
+.header {
+    padding: 10px;
+    text-align: center;
+    text-shadow: black;
+    font-size: 35px;
+    background-color: white;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.footer {
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: black;
+   text-align: center;
+   background-color: #f1f1f1;
+  padding: 10px;
+}
+body {
+
+}
+
+#who {
+  top: 50%;
+  left: 50%;
+	background-color: #f1f1f1;
+  text-align: center;
+}
