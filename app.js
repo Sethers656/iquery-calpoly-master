@@ -39,16 +39,16 @@ app.get('/contact', function(req, res){
 
 
 // DATABASE
-var MongoClient = require('mongodb').MongoClient
-  , assert = require('assert');
+//var MongoClient = require('mongodb').MongoClient
+  //, assert = require('assert');
 
 // Connection URL
-var url = 'mongodb://165.227.125.158:27017';
+//var url = 'mongodb://165.227.125.158:27017';
 
 // Use connect method to connect to the server
-MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
+//MongoClient.connect(url, function(err, db) {
+//  assert.equal(null, err);
+//  console.log("Connected successfully to server");
 
 
   
@@ -125,5 +125,5 @@ http.listen(port, function(){
   console.log('listening on *:' + port);
 });
 
-db.close();
-});
+//db.close();
+//});
