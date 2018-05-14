@@ -4,15 +4,15 @@
         <title>Dynamic Form Processing with PHP | Tech Stream</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/default.css"/>
-		<script type="text/javascript" src="js/script.js"></script> 
+		<script type="text/javascript" src="js/script.js"></script>
     </head>
-    <body>    
+    <body>
         <form action="process.php" class="register" method="POST">
             <h1>iQuery Quiz Creator</h1>
 			<fieldset class="row1">
                 <legend>Quiz Information</legend>
 				<p>
-                    <label>Quiz Name * 
+                    <label>Quiz Name *
                     </label>
                     <input name="bus" type="text" required="required"/>
                     <label>Date of Quiz  (2018)*
@@ -106,8 +106,8 @@
                         </option>
                         <option value="12">December
                         </option>
-                    </select>					
-					<label>Quiz Type * 
+                    </select>
+					<label>Quiz Type *
                     </label>
                     <select name="type">
                         <option value="Graded">Graded
@@ -115,7 +115,7 @@
                         <option value="Ungradedr">Ungraded
                         </option>
 					</select>
-					
+
                 </p>
                 <p>
 					<label>Class Name
@@ -126,7 +126,7 @@
 					<input name="to" required="required" type="text"/>
 					<label>Quiz Type
                     </label>
-					<select name="root">
+					<select id="root" onchange="show()">
                         <option value="1">Multiple Choice
                         </option>
                         <option value="2">Short Response
@@ -135,20 +135,20 @@
                         </option>
                     </select>
                 </p>
-               
+
 				<div class="clear"></div>
             </fieldset>
             <fieldset class="row2">
 				<legend>Question Details</legend>
-				<p> 
-					<input type="button" value="Add Question" onClick="addRow('dataTable')" /> 
-					<input type="button" value="Remove Question" onClick="deleteRow('dataTable')"  /> 
+				<p>
+					<input type="button" value="Add Question" onClick="addRow('dataTable')" />
+					<input type="button" value="Remove Question" onClick="deleteRow('dataTable')"  />
 					<p>(All acions apply only to entries with check marked check boxes only.)</p>
 				</p>
                <table id="dataTable" class="form" border="1">
                   <tbody>
-                    <tr>
-                      <p>
+                      <tr style="display:block;" id="mc">
+                        <p>
 						<td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
 						<td>
 							<label>Question 1</label>
@@ -182,7 +182,31 @@
 						 </td>
 							</p>
                     </tr>
-                    </tbody>
+                    <tr style="display:block;" id="shortR">
+                                <td><label>Question</label></td>
+                              <td><input type="text" id="quiz" style="display:block;" size=20 maxlength=12 value=""></td>
+                              <td>
+                              <input type="button" id="quiz2" onclick="addkid()" value="+" />
+                              <input type="button" id="quiz2" onclick="addkid()" value="-" />
+
+                              <td><input type="text" id="quiz7" style="display:block;" size=60 maxlength=60 value=""></td>
+
+                            </td>
+                            </tr>
+                            <tr  style="display:inline-block;" id="tf">
+                                   <td><label>Question. </label></td>
+                                   <td><input type="text" id="quiz4" style="display:inline-block;" size=20 maxlength=12 value=""></td>
+                                   <td><label>T/F </label></td>
+
+                                   <td><select>
+                                     <option value = "true">True
+                                       <option value="false">False
+                                       </select>
+                                         <input id="checkBox" type="checkbox">Correct Answer
+
+                                   </td>
+                             </tr>
+                           </tbody>
                 </table>
 				<div class="clear"></div>
             </fieldset>
@@ -201,26 +225,53 @@
                     <input type="checkbox" value=""/>
                     <label>I want to receive personalized offers by your Service</label>
                 </p>
-				
+
 				<div class="clear"></div>
             </fieldset>
 			<input class="submit" type="submit" value="Confirm &raquo;" />
 			<a class="submit" href="file:///C:/Users/Seth/Downloads/Dynamic-Form-Processing-with-PHP/process.PHP"/>Back to Techstream Article</a>
-			
+
 			<div class="clear"></div>
         </form>
-		
+
     </body>
 	<!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
-var sc_project=9046834; 
-var sc_invisible=1; 
-var sc_security="ec55ba17"; 
+var sc_project=9046834;
+var sc_invisible=1;
+var sc_security="ec55ba17";
 var scJsHost = (("https:" == document.location.protocol) ?
 "https://secure." : "http://www.");
 document.write("<sc"+"ript type='text/javascript' src='" +
 scJsHost+
 "statcounter.com/counter/counter.js'></"+"script>");
+
+function show(){
+
+    var option = document.getElementById("category").value;
+    if(option == "Multiple Choice"){
+      document.getElementById("tf").style.display="none";
+      document.getElementById("mc").style.display="block";
+      document.getElementById("shortR").style.display="none";
+    }
+  else  if(option === "Short Response")
+          {
+                document.getElementById("tf").style.display="none";
+                document.getElementById("mc").style.display="none";
+                document.getElementById("shortR").style.display="block";
+          }
+
+  else  if(option === "True/False")
+          {
+                document.getElementById("tf").style.display="block";
+                document.getElementById("mc").style.display="none";
+                document.getElementById("shortR").style.display="none";
+
+          }
+
+}
+
+
 </script>
 <noscript><div class="statcounter"><a title="free hit
 counter" href="http://statcounter.com/" target="_blank"><img
@@ -229,8 +280,3 @@ src="http://c.statcounter.com/9046834/0/ec55ba17/1/"
 alt="free hit counter"></a></div></noscript>
 <!-- End of StatCounter Code for Default Guide -->
 </html>
-
-
-
-
-
