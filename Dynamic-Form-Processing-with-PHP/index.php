@@ -184,6 +184,7 @@
 							</p>
                     </tr>
                     <tr style="display:block;" id="shortR">
+			    <td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
                                 <td><label>Question</label></td>
                               <td><input type="text" id="quiz" style="display:block;" size=20 maxlength=12 value=""></td>
                               <td>
@@ -195,6 +196,7 @@
                             </td>
                             </tr>
                             <tr  style="display:inline-block;" id="tf">
+				    <td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
                                    <td><label>Question. </label></td>
                                    <td><input type="text" id="quiz4" style="display:inline-block;" size=20 maxlength=12 value=""></td>
                                    <td><label>T/F </label></td>
