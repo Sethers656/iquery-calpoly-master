@@ -127,11 +127,12 @@
 					<label>Quiz Type
                     </label>
 					<select id="root" onchange="show()">
-                        <option value="1">Multiple Choice
+			<option value="Select">Select			
+                        <option value="Multiple Choice">Multiple Choice
                         </option>
-                        <option value="2">Short Response
+                        <option value="Short Response">Short Response
                         </option>
-                        <option value="3">True/False
+                        <option value="True/False">True/False
                         </option>
                     </select>
                 </p>
@@ -249,7 +250,12 @@ scJsHost+
 function show(){
 
     var option = document.getElementById("category").value;
-    if(option == "Multiple Choice"){
+	  if(option === "Select"){
+      document.getElementById("tf").style.display="none";
+      document.getElementById("mc").style.display="none";
+      document.getElementById("shortR").style.display="none";
+    }
+ else   if(option == "Multiple Choice"){
       document.getElementById("tf").style.display="none";
       document.getElementById("mc").style.display="block";
       document.getElementById("shortR").style.display="none";
