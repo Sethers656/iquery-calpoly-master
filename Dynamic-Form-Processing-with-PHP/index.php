@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/default.css"/>
 		<script type="text/javascript" src="js/script.js"></script>
     </head>
-    <body>
+    <body onload="fix()">
         <form action="process.php" class="register" method="POST">
             <h1>iQuery Quiz Creator</h1>
 			<fieldset class="row1">
@@ -124,17 +124,17 @@
 					<label>Chapter/Section
                     </label>
 					<input name="to" required="required" type="text"/>
-					<label>Quiz Type
+		<!--		<label>Quiz Type
                     </label>
 					<select id="root" onchange="show()">
-			<option value="Select">Select			
+            <option value="Multiple Choice">MC
                         <option value="Multiple Choice">Multiple Choice
                         </option>
                         <option value="Short Response">Short Response
                         </option>
                         <option value="True/False">True/False
                         </option>
-                    </select>
+                    </select> -->
                 </p>
 
 				<div class="clear"></div>
@@ -142,15 +142,16 @@
             <fieldset class="row2">
 				<legend>Question Details</legend>
 				<p>
-					<input type="button" value="Add Question" onClick="addRow('dataTable')" />
-					<input type="button" value="Remove Question" onClick="deleteRow('dataTable')"  />
+					<input type="button" value="Add MC Question" onClick="addRow('dataTable')" />
+          	<input type="button" value="Add ShortR Question" onClick="addRow('shortRtable')" />
+            	<input type="button" value="Add Tf Question" onClick="addRow('tfTable')" />
+					<input type="button" value="Remove Question" onClick="deleteRow('dataTable'); deleteRow('shortRtable'); deleteRow('tfTable')"  />
+
 					<p>(All acions apply only to entries with check marked check boxes only.)</p>
 				</p>
-               <table id="dataTable" class="form" border="1">
-                  <tbody>
-                      <tr style="display:block;" id="mc">
-                        <p>
-						<td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
+               <table id="dataTable" class="form" border="0">
+                  <tbody id="mc">
+						<td width=10><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
 						<td>
 							<label>Question 1</label>
 							<input type="text" required="required" name="BX_NAME[]">
@@ -177,26 +178,34 @@
 								<option>....</option>
 								<option>A</option>
 								<option>B</option>
-                                <option>C</option>
-                                <option>D</option>
+                <option>C</option>
+                <option>D</option>
 							</select>
 						 </td>
-							</p>
+
                     </tr>
+                    <p>
+                    </tbody>
+                  </table>
+                  <table id="shortRtable" class="form" border="1">
+                    <tbody>
                     <tr style="display:block;" id="shortR">
-			    <td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
+                      <td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
                                 <td><label>Question</label></td>
                               <td><input type="text" id="quiz" style="display:block;" size=20 maxlength=12 value=""></td>
-                              <td>
-                              <input type="button" id="quiz2" onclick="addkid()" value="+" />
-                              <input type="button" id="quiz2" onclick="addkid()" value="-" />
 
                               <td><input type="text" id="quiz7" style="display:block;" size=60 maxlength=60 value=""></td>
 
                             </td>
                             </tr>
-                            <tr  style="display:inline-block;" id="tf">
-				    <td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
+
+                          </p>
+                          <p>
+                          </tbody>
+                            </table>
+        <table id="tfTable" class="form" border="1">
+              <tr  style="display:inline-block;" id="tf">
+                              <td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
                                    <td><label>Question. </label></td>
                                    <td><input type="text" id="quiz4" style="display:inline-block;" size=20 maxlength=12 value=""></td>
                                    <td><label>T/F </label></td>
@@ -209,6 +218,7 @@
 
                                    </td>
                              </tr>
+                           </p>
                            </tbody>
                 </table>
 				<div class="clear"></div>
@@ -239,7 +249,8 @@
 
     </body>
 	<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
+<!--<script type="text/javascript"> -->
+<script>
 var sc_project=9046834;
 var sc_invisible=1;
 var sc_security="ec55ba17";
@@ -251,13 +262,14 @@ scJsHost+
 
 function show(){
 
-    var option = document.getElementById("category").value;
-	  if(option === "Select"){
+    var option = document.getElementById("root").value;
+
+    if(option === "Select"){
       document.getElementById("tf").style.display="none";
       document.getElementById("mc").style.display="none";
       document.getElementById("shortR").style.display="none";
     }
- else   if(option == "Multiple Choice"){
+else    if(option === "Multiple Choice"){
       document.getElementById("tf").style.display="none";
       document.getElementById("mc").style.display="block";
       document.getElementById("shortR").style.display="none";
@@ -271,6 +283,7 @@ function show(){
 
   else  if(option === "True/False")
           {
+
                 document.getElementById("tf").style.display="block";
                 document.getElementById("mc").style.display="none";
                 document.getElementById("shortR").style.display="none";
@@ -278,8 +291,12 @@ function show(){
           }
 
 }
+function fix(){
 
-
+    document.getElementById("tf").style.display="none";
+    document.getElementById("mc").style.display="block";
+    document.getElementById("shortR").style.display="none";
+}
 </script>
 <noscript><div class="statcounter"><a title="free hit
 counter" href="http://statcounter.com/" target="_blank"><img
