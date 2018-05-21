@@ -184,18 +184,18 @@
 							</select>
 						 </td>
 
-                    </tr>
-                    <p>
-                    </tbody>
+
+
+
                   </table>
                   <table id="shortRtable" class="form" border="1">
                     <tbody>
                     <tr style="display:block;" id="shortR">
                       <td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
                                 <td><label>Question</label></td>
-                              <td><input type="text" id="quiz" style="display:block;" size=20 maxlength=12 value=""></td>
+                              <td><input type="text" name="R_NAME[]"  size=20 maxlength=12 value=""></td>
 
-                              <td><input type="text" id="quiz7" style="display:block;" size=60 maxlength=60 value=""></td>
+
 
                             </td>
                             </tr>
@@ -205,10 +205,10 @@
                           </tbody>
                             </table>
         <table id="tfTable" class="form" border="1">
-              <tr  style="display:inline-block;" id="tf">
+              <tr   id="tf">
                               <td><input type="checkbox" required="required" name="chk[]" checked="checked" /></td>
                                    <td><label>Question. </label></td>
-                                   <td><input type="text" id="quiz4" style="display:inline-block;" size=20 maxlength=12 value=""></td>
+                                   <td><input type="text" id="quiz4" name="TF_NAME[]" size=20 maxlength=12 value=""></td>
                                    <td><label>T/F </label></td>
 
                                    <td><select>
@@ -219,8 +219,8 @@
 
                                    </td>
                              </tr>
-                           </p>
-                           </tbody>
+
+
                 </table>
 				<div class="clear"></div>
             </fieldset>
@@ -260,11 +260,8 @@ var scJsHost = (("https:" == document.location.protocol) ?
 document.write("<sc"+"ript type='text/javascript' src='" +
 scJsHost+
 "statcounter.com/counter/counter.js'></"+"script>");
-
 function show(){
-
     var option = document.getElementById("root").value;
-
     if(option === "Select"){
       document.getElementById("tf").style.display="none";
       document.getElementById("mc").style.display="none";
@@ -281,19 +278,14 @@ else    if(option === "Multiple Choice"){
                 document.getElementById("mc").style.display="none";
                 document.getElementById("shortR").style.display="block";
           }
-
   else  if(option === "True/False")
           {
-
                 document.getElementById("tf").style.display="block";
                 document.getElementById("mc").style.display="none";
                 document.getElementById("shortR").style.display="none";
-
           }
-
 }
 function fix(){
-
     document.getElementById("tf").style.display="none";
     document.getElementById("mc").style.display="block";
     document.getElementById("shortR").style.display="none";
